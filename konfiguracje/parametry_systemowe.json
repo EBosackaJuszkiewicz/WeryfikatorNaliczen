@@ -1,0 +1,88 @@
+{
+  "pracownik": {
+    "Emerytalna pracownika %": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 9.76
+    },
+    "Rentowa pracownika %": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 1.5
+    },
+    "Chorobowa%": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 2.45
+    }
+  },
+  "pracodawca": {
+    "Emerytalna pracodawcy %": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 9.76
+    },
+    "Rentowa pracodawcy %": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 6.5
+    },
+    "FGŚP %": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 0.1
+    },
+    "FP %": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 2.45
+    }
+  },
+  "parametry_podatkowe": {
+    "Minimalne": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 4666.0
+    },
+    "Procent podatku I": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 12.0
+    },
+    "Procent podatku II": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 32.0
+    },
+    "Zdrowotne %": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 9.0
+    },
+    "Stawka podatku ograniczająca składkę zdrowotną %": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 17.0
+    },
+    "Limit 30-krotności": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 17.0
+    },
+    "Drugi próg podatkowy": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 120000.0
+    },
+    "26 lat limit": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 85528.0
+    },
+    "Limit kosztow autorskich": {
+      "data_od": "2025-01-01",
+      "data_do": "2025-12-31",
+      "wartosc": 120000.0
+    }
+  }
+}
