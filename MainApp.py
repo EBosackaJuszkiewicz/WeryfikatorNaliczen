@@ -2,16 +2,17 @@ import os.path
 import sys
 
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QWidget, QApplication, QTabWidget, QVBoxLayout, QLabel, QTableWidget, QTableWidgetItem, \
-    QHeaderView, QPushButton
+from PyQt5.QtWidgets import QWidget, QApplication, QTabWidget, QVBoxLayout, QHBoxLayout
+from PyQt5.QtWidgets import QHBoxLayout, QVBoxLayout, QWidget
 
 from ColoredTabBar import ColoredTabBar
-from GroupedJSONTableWidget import GroupedJSONTableWidget
+from ComponentConfigWidget import ComponentConfigWidget
+from DBTableWidget import DBTableWidget
 from JSONTableWidget import JSONTableWidget
 
 CONFIG_FOLDER = "konfiguracje"
-PARAMETRY_SYSTEMOWE = os.path.join(CONFIG_FOLDER, "parametry_systemowe.json")
 KONFIGURACJE_PRAWNE = os.path.join(CONFIG_FOLDER, "konfiguracje_prawne.json")
+DEFINICJE_SKŁADNIKÓW = os.path.join(CONFIG_FOLDER, "definicje_składników.json")
 
 class MainApp(QWidget):
     def __init__(self):
@@ -23,10 +24,10 @@ class MainApp(QWidget):
         self.tabs = QTabWidget()
         self.outer_tabs_colors = [
             "#E8E8ED",  # jasny szary
-            "#DDE7F0",  # bardzo jasny pastelowy błękit
-            "#F2F2F2",  # ultra neutralny szary
-            "#E3EAF3",  # delikatny zimny niebiesko-szary
-        ] # kolory nagłówków
+            "#FFFFFF",  # pastelowy błękit
+            "#F2F2F2",  # szary
+            "#E3EAF3",  # niebiesko-szary
+        ]
         outer_bar = ColoredTabBar(self.outer_tabs_colors)
         self.tabs.setTabBar(outer_bar)
         main_layout.addWidget(self.tabs)
@@ -70,23 +71,16 @@ class MainApp(QWidget):
 
         layout.addWidget(inner_tabs)
 
-
-        systemowe_tab = QWidget()
-        systemowe_tab.setLayout(QVBoxLayout())
-        self.setup_systemowe_tab(systemowe_tab)
-
         konfiguracje_prawne_tab = QWidget()
         konfiguracje_prawne_tab.setLayout(QVBoxLayout())
         self.setup_konfiguracje_prawne_tab(konfiguracje_prawne_tab)
 
-        inner_tabs.addTab(systemowe_tab, "Systemowe")
         inner_tabs.addTab(konfiguracje_prawne_tab, "Konfiguracje prawne")
         self.apply_tab_colors(inner_tabs, self.inner_tabs_colors)
 
-    def setup_systemowe_tab(self, parent_widget):
+    def setup_konfiguracje_prawne_tab(self, parent_widget):
         if not os.path.exists(CONFIG_FOLDER):
             os.makedirs(CONFIG_FOLDER)
-
         custom_styles = {
             "table_bg": "#FDFDFD",
             "alternate_bg": "#F3F7FA",
@@ -101,33 +95,7 @@ class MainApp(QWidget):
             "row_highlight_color": "#1B2631",
         }
 
-        table = GroupedJSONTableWidget(PARAMETRY_SYSTEMOWE, styles=custom_styles)
-
-        parent_widget.layout().addWidget(table)
-        table.load_grouped_json()
-
-    def setup_konfiguracje_prawne_tab(self, parent_widget):
-        os.makedirs(CONFIG_FOLDER, exist_ok=True)
-        custom_styles = {
-            "table_bg": "#FDFDFD",
-            "alternate_bg": "#F3F7FA",
-            "gridline": "#D0D8E0",
-            "header_bg": "#2C3E50",
-            "header_color": "#ECF0F1",
-            "button_bg": "#2C3E50",
-            "button_hover": "#5c7996",
-            "button_border": "#5c7996",
-            "button_text": "#FFFFFF",
-            "row_highlight": "#D6EAF8",
-            "row_highlight_color": "#1B2631",
-        }
-
-        # Tworzymy tabelę
-        table = JSONTableWidget(json_file=KONFIGURACJE_PRAWNE, styles=custom_styles)
-
-        # Przyciski
-        from PyQt5.QtWidgets import QHBoxLayout, QVBoxLayout, QWidget, QInputDialog
-
+        table = JSONTableWidget(json_file=KONFIGURACJE_PRAWNE, stretch_columns=False, styles=custom_styles)
         container = QWidget()
         layout = QVBoxLayout(container)
         layout.addWidget(table)
@@ -137,7 +105,6 @@ class MainApp(QWidget):
 
         add_configuration_btn = table.create_styled_button("Dodaj konfigurację", width=200, height=35)
         add_configuration_btn.clicked.connect(table.add_row_dialog)
-
         remove_configuration_btn = table.create_styled_button("Usuń konfigurację", width=200, height=35)
         remove_configuration_btn.clicked.connect(table.remove_configuration)
 
@@ -148,8 +115,52 @@ class MainApp(QWidget):
         parent_widget.layout().addWidget(container)
 
     def setup_definicje_skladnikow_tab(self):
+        """
+        Konfiguruje zakładkę 'Definicje składników' używając pionowego układu Master-Detail.
+        Master (Góra): Lista KodSL (MasterListWidget).
+        Detail (Dół): Tabela parametrów dla wybranego KodSL (DetailTableWidget).
+        """
+
+        # 1. Tworzenie kontenera zakładki
         definicje_skladnikow = QWidget()
         self.tabs.addTab(definicje_skladnikow, "Definicje składników")
+
+        # 2. Tworzenie folderu konfiguracji (jeśli nie istnieje)
+        if not os.path.exists(CONFIG_FOLDER):
+            os.makedirs(CONFIG_FOLDER)
+
+        # 3. Definicja stylów dla tabel (Custom Styles)
+        custom_styles = {
+            'table_bg': "#FFFFFF",
+            'alternate_bg': "#F7F7F7",
+            'row_highlight': "#DBEAFE",
+            'row_highlight_color': "#111827",
+            'header_bg': "#F3F4F6",
+            'header_color': "#111827",
+            'button_bg': "#F3F4F6",
+            'button_border': "#D1D5DB",
+            'button_text': "#111827",
+            'button_hover': "#E5E7EB"
+        }
+
+        # 4. Tworzenie widżetu kontenera Master-Detail
+        # Master-Detail Container jest instancją ComponentConfigWidget,
+        # która wewnętrznie zarządza MasterListWidget (Góra) i DetailTableWidget (Dół)
+        master_detail_container = ComponentConfigWidget(styles=custom_styles)
+
+        # 5. Ustawienie głównego układu dla zakładki
+        main_layout = QVBoxLayout(definicje_skladnikow)
+
+        # Usuwamy marginesy, aby widżet Master-Detail wypełnił całą przestrzeń zakładki
+        main_layout.setContentsMargins(0, 0, 0, 0)
+
+        # 6. Dodanie kontenera Master-Detail do zakładki
+        main_layout.addWidget(master_detail_container)
+
+        # Uwaga: Logika przycisków "Dodaj definicję składnika" i "Usuń konfigurację"
+        # została PRZENIESIONA do klasy ComponentConfigWidget (lub MasterListWidget),
+        # aby znajdowała się bezpośrednio pod listą składników, którą modyfikuje.
+        # W tym miejscu nie dodajemy już żadnych przycisków.
 
 
 

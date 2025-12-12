@@ -4,20 +4,22 @@ from collections import OrderedDict
 
 from PyQt5.QtWidgets import (
     QTableWidget, QTableWidgetItem, QHeaderView, QPushButton, QInputDialog, QMessageBox, QDialog, QLineEdit,
-    QHBoxLayout, QVBoxLayout, QLabel
+    QHBoxLayout, QVBoxLayout, QLabel, QComboBox
 )
 from PyQt5.QtGui import QColor
 from PyQt5.QtCore import Qt, QTimer
 
-
+from NoScrollComboBox import NoScrollComboBox
 
 
 class JSONTableWidget(QTableWidget):
-    def __init__(self, json_file, styles=None, parent=None):
+    def __init__(self, json_file, boolean_headers = None, stretch_columns=True, styles=None, parent=None):
         super().__init__(parent)
         self.json_file = json_file
         self.data_before_conversion = OrderedDict()
         self.variant_names = []
+        self.boolean_headers = boolean_headers if boolean_headers is not None else []
+        self.stretch_columns = stretch_columns
 
         # Domyślne style
         default_styles = {
@@ -63,6 +65,35 @@ class JSONTableWidget(QTableWidget):
         self.horizontalHeader().sectionClicked.connect(self.select_column)
         self.cellChanged.connect(self.cell_modified)
 
+        # W klasie JSONTableWidget
+        # ----------------- Obsługa ComboBox -----------------
+
+    def combo_box_modified(self, row, col, text):
+        """Obsługuje zmianę wartości w QComboBox i aktualizuje styl."""
+        combo_box = self.cellWidget(row, col)
+        self.style_combo_box_by_text(combo_box, text)
+        header = self.horizontalHeaderItem(col).text()
+        variant = self.variant_names[row]
+        self.data_before_conversion[variant][header] = text
+        self.item(row, col).setText(text)
+
+        self.save_json()
+        self.update_row_colors()
+
+    def style_combo_box_by_text(self, combo_box, text):
+        """Ustawia tło QComboBox na podstawie wybranego tekstu ('tak', 'nie', 'puste')."""
+        style = "QComboBox { "
+
+        if text.lower() == "tak":
+            # Zielone tło, biały tekst
+            style += "background-color: #D0F0C0; color: #154360; }"
+        elif text.lower() == "nie":
+            # Czerwone tło, biały tekst
+            style += "background-color: #FFD6D6; color: #641E16; }"
+        else:
+            # Neutralne tło, czarny tekst
+            style += "background-color: #FFFFFF; color: #000000; }"
+        combo_box.setStyleSheet(style)
     # ----------------- JSON -----------------
     def load_json(self):
         if os.path.exists(self.json_file):
@@ -89,10 +120,30 @@ class JSONTableWidget(QTableWidget):
         for r, variant in enumerate(self.variant_names):
             for c, key in enumerate(headers):
                 value = self.data_before_conversion[variant].get(key, "")
-                self.setItem(r, c, QTableWidgetItem(str(value)))
+                if key in self.boolean_headers:
+                    combo_box = NoScrollComboBox(self)
+                    combo_box.addItems(["tak", "nie", ""])
+                    self.style_combo_box_by_text(combo_box, str(value))
+
+                    if value.lower() in ["tak", "nie"]:
+                        combo_box.setCurrentText(value)
+                    else:
+                        combo_box.setCurrentIndex(combo_box.findText(""))
+                    self.setCellWidget(r, c, combo_box)
+                    combo_box.currentTextChanged.connect(
+                        lambda text, row=r, col=c: self.combo_box_modified(row, col, text)
+                    )
+                    item = QTableWidgetItem(value)
+                    item.setFlags(item.flags() & ~Qt.ItemIsEditable)
+                    self.setItem(r, c, item)
+                else:
+                    self.setItem(r, c, QTableWidgetItem(str(value)))
 
         self.update_row_colors()
         self.auto_resize_columns()
+
+
+
 
     def save_json(self):
         # Zapis do pliku w tym samym formacie wierszowym
@@ -115,15 +166,20 @@ class JSONTableWidget(QTableWidget):
         self.data_before_conversion[variant][header] = value
         self.save_json()
 
-    def add_row_dialog(self):
+    def add_row_dialog(self,
+                       title="Dodaj nową konfigurację",
+                       label_text="Podaj unikalną nazwę konfiguracji:",
+                       placeholder_text="Nazwa konfiguracji (np. 'UOP 2026')"):
+
         dialog = QDialog(self)
-        dialog.setWindowTitle("Dodaj nową konfigurację")
+        dialog.setWindowTitle(title)  # Użycie parametru
         dialog.setFixedSize(650, 150)
         main_layout = QVBoxLayout(dialog)
 
-        label = QLabel("Podaj unikalną nazwę konfiguracji:")
+        label = QLabel(label_text)  # Użycie parametru
         input_field = QLineEdit()
-        input_field.setPlaceholderText("Nazwa konfiguracji (np. 'UOP 2026')")
+        input_field.setPlaceholderText(placeholder_text)  # Użycie parametru
+
         button_layout = QHBoxLayout()
         ok_button = QPushButton("Dodaj")
         cancel_button = QPushButton("Anuluj")
@@ -138,52 +194,60 @@ class JSONTableWidget(QTableWidget):
         ok_button.clicked.connect(lambda: dialog.accept())
         cancel_button.clicked.connect(lambda: dialog.reject())
         input_field.returnPressed.connect(lambda: dialog.accept())
+
         if dialog.exec_() == QDialog.Accepted:
             new_variant_name = input_field.text().strip()
 
             if not new_variant_name:
                 QMessageBox.warning(self, "Błąd", "Nazwa nie może być pusta.")
                 return
+            item_type = title.lower().replace('dodaj nową ', '').replace('dodaj ', '')
 
             if new_variant_name in self.variant_names:
-                QMessageBox.warning(self, "Błąd", f"Konfiguracja o nazwie '{new_variant_name}' już istnieje.")
+                QMessageBox.warning(self, "Błąd",
+                                    f"{item_type.capitalize()} o nazwie '{new_variant_name}' już istnieje.")
                 return
-
             self.add_row(new_variant_name)
 
     def add_row(self, new_variant_name):
-        """Dodaje nowy wiersz do wewnętrznego modelu danych i do tabeli."""
+        """Dodaje nowy wiersz do wewnętrznego modelu danych i do tabeli z obsługą QComboBox."""
 
-        # 1. Dodanie wariantu do wewnętrznego modelu danych
-        # Nowy wariant musi zawierać klucze kolumn (nagłówki) z pustymi wartościami.
         new_variant_data = OrderedDict()
-
-        # Pobranie nagłówków kolumn z istniejącej tabeli
         headers = [self.horizontalHeaderItem(c).text() for c in range(self.columnCount())]
 
         for header in headers:
-            new_variant_data[header] = ""  # Ustawienie pustej wartości
+            new_variant_data[header] = ""
+        new_variant_name = new_variant_name.upper()
 
         self.data_before_conversion[new_variant_name] = new_variant_data
         self.variant_names.append(new_variant_name)
 
-        # 2. Aktualizacja widżetu QTableWidget
         row_count = self.rowCount()
         self.insertRow(row_count)
-
-        # Ustawienie nagłówka pionowego (nazwa wariantu)
         self.setVerticalHeaderLabels(self.variant_names)
 
-        # Wypełnienie komórek w nowym wierszu
         for c, key in enumerate(headers):
-            # Wstawienie pustego QTableWidgetItem
-            self.setItem(row_count, c, QTableWidgetItem(str(new_variant_data.get(key, ""))))
 
-        # 3. Zapis i aktualizacja widoku
+            if key in self.boolean_headers:
+                combo_box = NoScrollComboBox(self)
+                combo_box.addItems(["tak", "nie", ""])
+                combo_box.setCurrentText("")  # Ustawienie pustej wartości
+                self.setCellWidget(row_count, c, combo_box)
+                self.style_combo_box_by_text(combo_box, "")
+
+                combo_box.currentTextChanged.connect(
+                    lambda text, row=row_count, col=c: self.combo_box_modified(row, col, text)
+                )
+
+                item = QTableWidgetItem("")
+                item.setFlags(item.flags() & ~Qt.ItemIsEditable)
+                self.setItem(row_count, c, item)
+
+            else:
+                self.setItem(row_count, c, QTableWidgetItem(str(new_variant_data.get(key, ""))))
+
         self.save_json()
         self.update_row_colors()
-
-        # Opcjonalnie: Przewinięcie i zaznaczenie nowego wiersza
         self.selectRow(row_count)
         self.scrollToBottom()
 
@@ -199,7 +263,7 @@ class JSONTableWidget(QTableWidget):
         variant_to_remove = self.variant_names[row_index]
 
         reply = QMessageBox.question(self, 'Potwierdzenie Usunięcia',
-                                     f"Czy na pewno chcesz usunąć wariant '{variant_to_remove}'?",
+                                     f"Czy na pewno chcesz usunąć '{variant_to_remove}'?",
                                      QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
 
         if reply == QMessageBox.Yes:
@@ -238,32 +302,40 @@ class JSONTableWidget(QTableWidget):
     # ----------------- Resizing -----------------
     def auto_resize_columns(self):
         header = self.horizontalHeader()
-        min_widths = []
-        for i in range(self.columnCount()):
-            item = self.horizontalHeaderItem(i)
-            if item:
-                w = self.fontMetrics().boundingRect(item.text()).width() + 40
-            else:
-                w = 60
-            min_widths.append(w)
 
-        total_min = sum(min_widths)
-        scrollbar_w = self.verticalScrollBar().width() if self.verticalScrollBar().isVisible() else 0
-        frame_w = self.frameWidth() * 2
-        available = self.width() - scrollbar_w - frame_w
-
-        if total_min <= available:
-            extra = available - total_min
-            per_col_extra = extra / self.columnCount()
+        if self.stretch_columns:
             for i in range(self.columnCount()):
-                header.setSectionResizeMode(i, QHeaderView.Interactive)
-                header.resizeSection(i, int(min_widths[i] + per_col_extra))
-            self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+                header.setSectionResizeMode(i, QHeaderView.Stretch)
+                self.verticalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
         else:
             for i in range(self.columnCount()):
                 header.setSectionResizeMode(i, QHeaderView.Interactive)
-                header.resizeSection(i, min_widths[i])
-            self.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+            min_widths = []
+            for i in range(self.columnCount()):
+                item = self.horizontalHeaderItem(i)
+                if item:
+                    w = self.fontMetrics().boundingRect(item.text()).width() + 40
+                else:
+                    w = 60
+                min_widths.append(w)
+
+            total_min = sum(min_widths)
+            scrollbar_w = self.verticalScrollBar().width() if self.verticalScrollBar().isVisible() else 0
+            frame_w = self.frameWidth() * 2
+            available = self.width() - scrollbar_w - frame_w
+
+            if total_min <= available:
+                # Jeśli wszystko się mieści, rozdziel nadmiar przestrzeni
+                extra = available - total_min
+                per_col_extra = extra / self.columnCount()
+                for i in range(self.columnCount()):
+                    header.resizeSection(i, int(min_widths[i] + per_col_extra))
+                self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+            else:
+                # Jeśli jest za mało miejsca, ustaw minimalne szerokości i włącz scrollbar
+                for i in range(self.columnCount()):
+                    header.resizeSection(i, min_widths[i])
+                self.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
     def select_column(self, index):
         self.clearSelection()
@@ -294,3 +366,4 @@ class JSONTableWidget(QTableWidget):
     def resizeEvent(self, event):
         super().resizeEvent(event)
         self.auto_resize_columns()
+

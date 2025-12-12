@@ -1,0 +1,5 @@
+{
+    "migration_server": "k1590-02",
+    "migration_db": "Migration_AX_0080_SL_0127",
+    "odbc_driver": "ODBC Driver 17 for SQL Server"
+}

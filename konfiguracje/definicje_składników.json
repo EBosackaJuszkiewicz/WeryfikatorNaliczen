@@ -1,0 +1,722 @@
+{
+  "APREUZN": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AGODZ100": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AGODZ100DOD": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AGODZ50": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AGODZ50DOD": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AGODZ_NOCNE": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "ADODZANOC": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZAGODNADL": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AWYNURLOP": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AEKWIWURL_W": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AWYNCHOR": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "ZACH": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "ZAMAC": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "tak",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AWYRWYN": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN1": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "nie",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN2": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN3": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN4": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN5": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN6": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN7": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN8": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN9": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN10": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN11": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN12": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN13": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN14": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTWYCHN15": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODN1": {
+    "ZUS": "tak",
+    "Podatek": "",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODN2": {
+    "ZUS": "tak",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSNPODT1": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSNPODT2": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "nie",
+    "Koszty autorskie": ""
+  },
+  "AZUSNPODT3": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "nie",
+    "Koszty autorskie": ""
+  },
+  "AODLICZZNPT1": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PODLICZZNPT1": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AODLICZZNPT2": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PODLICZZNPT2": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSNPODN": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "ADOZWROTU": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "nie",
+    "Koszty autorskie": ""
+  },
+  "ASWIADCZENIA_PN": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODT": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AODLICZBRUTTO1": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSTPODTCHOTUN": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AODPRAWA_PR": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "ARYCZSAM": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSNPODTZDROT": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR1": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR2": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR3": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR4": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR5": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR6": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR7": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR8": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR9": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR10": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR11": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR12": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR13": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR14": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR15": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR16": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR17": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR18": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR19": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PPOTR20": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AHONORAUTOR": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": "tak"
+  },
+  "AODLICZZNPT3": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "PODLICZZNPT3": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "tak",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "ZDODRODZURODZ": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "APRE_ROK": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "ABRUTTOZNETTO1": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "ZAMACR": {
+    "ZUS": "",
+    "Podatek": "tak",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "tak",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSNPODT4": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSNPODN1": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSNPODN2": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AZUSNPODN3": {
+    "ZUS": "",
+    "Podatek": "",
+    "Zdrowotne": "",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "APREKW": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  },
+  "AANGAZ": {
+    "ZUS": "tak",
+    "Podatek": "tak",
+    "Zdrowotne": "tak",
+    "Potrącenie": "",
+    "Zasiłek": "",
+    "Rodzaj zajęcia komorniczego": "",
+    "Koszty autorskie": ""
+  }
+}

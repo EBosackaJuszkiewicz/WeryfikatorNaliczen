@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6846f995-3d17-4165-963e-b58b67132e8a" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/ColoredTabBar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GroupedJSONTableWidget.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JSONTableWidget.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/konfiguracje/parametry_systemowe.json" afterDir="false" />
+    <list default="true" id="6846f995-3d17-4165-963e-b58b67132e8a" name="Changes" comment="Adding KonfiuracjePrawne in Parametry tab">
+      <change afterPath="$PROJECT_DIR$/ComponentConfigWidget.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DBTableWidget.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NoScrollComboBox.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detail_table_widget.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/konfiguracje/db_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/konfiguracje/definicje_składników.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/master_list_widget.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GroupedJSONTableWidget.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSONTableWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSONTableWidget.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainApp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/konfiguracje/parametry_systemowe.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +34,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;EBosackaJuszkiewicz&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/EBosackaJuszkiewicz/WeryfikatorNaliczen.git&quot;,
+    &quot;accountId&quot;: &quot;7073a602-2573-4f5e-bdef-47e1b8cdc1fe&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -35,21 +54,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.AddVariantDialog.executor": "Run",
-    "Python.ColoredTabBar.executor": "Run",
-    "Python.JSONTableWidget.executor": "Run",
-    "Python.KonfiguracjePrawneTableWidget.executor": "Debug",
-    "Python.MainApp.executor": "Run",
-    "Python.StyledTableWidget.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.AddVariantDialog.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ColoredTabBar.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DBTableWidget.executor&quot;: &quot;Run&quot;,
+    &quot;Python.JSONTableWidget.executor&quot;: &quot;Run&quot;,
+    &quot;Python.KonfiguracjePrawneTableWidget.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.MainApp.executor&quot;: &quot;Run&quot;,
+    &quot;Python.StyledTableWidget.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -73,11 +93,20 @@
       <option name="project" value="LOCAL" />
       <updated>1765283356811</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding KonfiuracjePrawne in Parametry tab">
+      <option name="closed" value="true" />
+      <created>1765450441880</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765450441880</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Adding KonfiuracjePrawne in Parametry tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding KonfiuracjePrawne in Parametry tab" />
   </component>
 </project>
